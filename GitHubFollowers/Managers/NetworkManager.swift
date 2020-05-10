@@ -59,7 +59,7 @@ class NetworkManager {
         }
     }
 
-
+    // Old way using completion handlers
     /*
       func getFollowers(for username: String, page: Int, completed: @escaping (Result<[Follower], GFError>) -> ()) {
           let endpoint = baseURL + "\(username)/followers?per_page=100&page=\(page)"

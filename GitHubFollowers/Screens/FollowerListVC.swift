@@ -41,7 +41,23 @@ class FollowerListVC: GFDataLoadingVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
-        collectionView.setContentOffset(CGPoint.zero, animated: true)
+    }
+
+
+    override func updateContentUnavailableConfiguration(using state: UIContentUnavailableConfigurationState) {
+        if followers.isEmpty && !isLoadingMoreFollowers {
+            var config = UIContentUnavailableConfiguration.empty()
+            config.image = SFSymbols.noFollowers
+            config.text = "No Followers"
+            config.secondaryText = "This user has no followers. Go follow them!"
+            contentUnavailableConfiguration = config
+            navigationItem.searchController?.searchBar.isHidden = true
+        } else if isSearching && filteredFollowers.isEmpty {
+            contentUnavailableConfiguration = UIContentUnavailableConfiguration.search()
+        } else {
+            navigationItem.searchController?.searchBar.isHidden = false
+            contentUnavailableConfiguration = nil
+        }
     }
 
 
@@ -94,6 +110,7 @@ class FollowerListVC: GFDataLoadingVC {
             }
         }
 
+        // If we don't care about specific error type
         /*
          Task {
              guard let followers = try? await NetworkManager.shared.getFollowers(for: username, page: page) else {
@@ -107,6 +124,7 @@ class FollowerListVC: GFDataLoadingVC {
          }
          */
 
+        // Old way using completion handler
         /*
          NetworkManager.shared.getFollowers(for: username, page: page) { [weak self] result in
              guard let self = self else { return }
@@ -129,14 +147,8 @@ class FollowerListVC: GFDataLoadingVC {
     func updateUI(with followers: [Follower]) {
         if followers.count < 100 { hasMoreFollowers = false }
         self.followers.append(contentsOf: followers)
-
-        if followers.isEmpty {
-            let message = "This user doesn't have any followers. Go follow him 🥸."
-            DispatchQueue.main.async { self.showEmptyStateView(with: message, in: self.view) }
-            return
-        }
-
         updateData(on: self.followers)
+        setNeedsUpdateContentUnavailableConfiguration()
     }
 
 
@@ -239,11 +251,13 @@ extension FollowerListVC: UISearchResultsUpdating {
             filteredFollowers.removeAll()
             updateData(on: followers)
             isSearching = false
+            setNeedsUpdateContentUnavailableConfiguration()
             return
         }
         isSearching = true
         filteredFollowers = followers.filter { $0.login.lowercased().contains(filter.lowercased()) }
         updateData(on: filteredFollowers)
+        setNeedsUpdateContentUnavailableConfiguration()
     }
 }
 
@@ -257,7 +271,7 @@ extension FollowerListVC: UserInfoVCDelegate {
 
         followers.removeAll()
         filteredFollowers.removeAll()
-        collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: true)
+        navigationItem.searchController?.searchBar.text = ""
         getFollowers(username: username, page: page)
     }
 }
