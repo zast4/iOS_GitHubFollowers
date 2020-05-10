@@ -18,6 +18,11 @@
 		A5C1454E2BB4247500EB632E /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C1454D2BB4247500EB632E /* Follower.swift */; };
 		A5C145502BB4254000EB632E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C1454F2BB4254000EB632E /* User.swift */; };
 		A5C145532BB4300E00EB632E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C145522BB4300E00EB632E /* NetworkManager.swift */; };
+		A5C145562BB47E3600EB632E /* GFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C145552BB47E3600EB632E /* GFError.swift */; };
+		A5C145592BB4858200EB632E /* FollowerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C145582BB4858200EB632E /* FollowerCell.swift */; };
+		A5C1455B2BB4861A00EB632E /* GFAvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C1455A2BB4861A00EB632E /* GFAvatarImageView.swift */; };
+		A5C1455D2BB5EF0D00EB632E /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C1455C2BB5EF0D00EB632E /* UIHelper.swift */; };
+		A5C145652BB6185B00EB632E /* GFEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C145642BB6185B00EB632E /* GFEmptyStateView.swift */; };
 		A5DD66B12BB1CD2300029683 /* FollowerListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DD66B02BB1CD2300029683 /* FollowerListVC.swift */; };
 		A5DD66B32BB1D30300029683 /* GFTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DD66B22BB1D30300029683 /* GFTitleLabel.swift */; };
 		A5DD66B52BB1EF4000029683 /* GFBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DD66B42BB1EF4000029683 /* GFBodyLabel.swift */; };
@@ -39,6 +44,11 @@
 		A5C1454D2BB4247500EB632E /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
 		A5C1454F2BB4254000EB632E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A5C145522BB4300E00EB632E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		A5C145552BB47E3600EB632E /* GFError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFError.swift; sourceTree = "<group>"; };
+		A5C145582BB4858200EB632E /* FollowerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCell.swift; sourceTree = "<group>"; };
+		A5C1455A2BB4861A00EB632E /* GFAvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAvatarImageView.swift; sourceTree = "<group>"; };
+		A5C1455C2BB5EF0D00EB632E /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
+		A5C145642BB6185B00EB632E /* GFEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFEmptyStateView.swift; sourceTree = "<group>"; };
 		A5DD66B02BB1CD2300029683 /* FollowerListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerListVC.swift; sourceTree = "<group>"; };
 		A5DD66B22BB1D30300029683 /* GFTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFTitleLabel.swift; sourceTree = "<group>"; };
 		A5DD66B42BB1EF4000029683 /* GFBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFBodyLabel.swift; sourceTree = "<group>"; };
@@ -76,6 +86,7 @@
 		A52CEE512BAB36CF00EB644A /* GitHubFollowers */ = {
 			isa = PBXGroup;
 			children = (
+				A5C145542BB47E2200EB632E /* Utilities */,
 				A5C145512BB42FF800EB632E /* Managers */,
 				A5C1454B2BB4231800EB632E /* Model */,
 				A5DD66BA2BB1F9D300029683 /* Screens */,
@@ -104,6 +115,72 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		A5C145542BB47E2200EB632E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A5C145552BB47E3600EB632E /* GFError.swift */,
+				A5C1455C2BB5EF0D00EB632E /* UIHelper.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		A5C145572BB4855500EB632E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A5C145582BB4858200EB632E /* FollowerCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		A5C1455E2BB617DE00EB632E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A5C145642BB6185B00EB632E /* GFEmptyStateView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A5C1455F2BB617E300EB632E /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				A52CEED72BADAB5200EB644A /* GFButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		A5C145602BB617E700EB632E /* TextFields */ = {
+			isa = PBXGroup;
+			children = (
+				A52CEED92BADAE0F00EB644A /* GFTextField.swift */,
+			);
+			path = TextFields;
+			sourceTree = "<group>";
+		};
+		A5C145612BB617EE00EB632E /* ImageViews */ = {
+			isa = PBXGroup;
+			children = (
+				A5C1455A2BB4861A00EB632E /* GFAvatarImageView.swift */,
+			);
+			path = ImageViews;
+			sourceTree = "<group>";
+		};
+		A5C145622BB617F300EB632E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A5DD66B62BB1F00C00029683 /* GFAlertVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A5C145632BB6182300EB632E /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				A5DD66B22BB1D30300029683 /* GFTitleLabel.swift */,
+				A5DD66B42BB1EF4000029683 /* GFBodyLabel.swift */,
+			);
+			path = Labels;
+			sourceTree = "<group>";
+		};
 		A5DD66BA2BB1F9D300029683 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,11 +194,13 @@
 		A5DD66BB2BB1FA1F00029683 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				A52CEED72BADAB5200EB644A /* GFButton.swift */,
-				A52CEED92BADAE0F00EB644A /* GFTextField.swift */,
-				A5DD66B22BB1D30300029683 /* GFTitleLabel.swift */,
-				A5DD66B42BB1EF4000029683 /* GFBodyLabel.swift */,
-				A5DD66B62BB1F00C00029683 /* GFAlertVC.swift */,
+				A5C145632BB6182300EB632E /* Labels */,
+				A5C145622BB617F300EB632E /* ViewControllers */,
+				A5C145612BB617EE00EB632E /* ImageViews */,
+				A5C145602BB617E700EB632E /* TextFields */,
+				A5C1455F2BB617E300EB632E /* Buttons */,
+				A5C1455E2BB617DE00EB632E /* Views */,
+				A5C145572BB4855500EB632E /* Cells */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -220,10 +299,15 @@
 				A52CEED02BAD976300EB644A /* FavoriteListVC.swift in Sources */,
 				A52CEED82BADAB5200EB644A /* GFButton.swift in Sources */,
 				A5DD66B92BB1F77900029683 /* UIViewController+Ext.swift in Sources */,
+				A5C1455D2BB5EF0D00EB632E /* UIHelper.swift in Sources */,
+				A5C1455B2BB4861A00EB632E /* GFAvatarImageView.swift in Sources */,
 				A52CEECE2BAD973A00EB644A /* SearchVC.swift in Sources */,
 				A5DD66B72BB1F00C00029683 /* GFAlertVC.swift in Sources */,
+				A5C145592BB4858200EB632E /* FollowerCell.swift in Sources */,
+				A5C145562BB47E3600EB632E /* GFError.swift in Sources */,
 				A5DD66B52BB1EF4000029683 /* GFBodyLabel.swift in Sources */,
 				A5C1454E2BB4247500EB632E /* Follower.swift in Sources */,
+				A5C145652BB6185B00EB632E /* GFEmptyStateView.swift in Sources */,
 				A5DD66B32BB1D30300029683 /* GFTitleLabel.swift in Sources */,
 				A5C145532BB4300E00EB632E /* NetworkManager.swift in Sources */,
 				A5DD66B12BB1CD2300029683 /* FollowerListVC.swift in Sources */,
@@ -378,6 +462,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -408,6 +493,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
