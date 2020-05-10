@@ -1,8 +1,19 @@
-//
-//  UIView+Ext.swift
-//  GitHubFollowers
-//
-//  Created by Даниил on 31.03.2024.
-//
+import UIKit
 
-import Foundation
+extension UIView {
+    
+    func addSubviews(_ views: UIView...) {
+        for view in views { addSubview(view) }
+    }
+    
+    
+    func pinToEdges(of superview: UIView) {
+        translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            topAnchor.constraint(equalTo: superview.topAnchor),
+            leadingAnchor.constraint(equalTo: superview.leadingAnchor),
+            trailingAnchor.constraint(equalTo: superview.trailingAnchor),
+            bottomAnchor.constraint(equalTo: superview.bottomAnchor)
+        ])
+    }
+}

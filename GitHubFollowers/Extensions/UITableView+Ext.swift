@@ -1,8 +1,13 @@
-//
-//  UITableView+Ext.swift
-//  GitHubFollowers
-//
-//  Created by Даниил on 01.04.2024.
-//
+import UIKit
 
-import Foundation
+extension UITableView {
+    
+    func reloadDataOnMainThread() {
+        DispatchQueue.main.async { self.reloadData() }
+    }
+    
+    
+    func removeExcessCells() {
+        tableFooterView = UIView(frame: .zero)
+    }
+}
