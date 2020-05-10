@@ -1,23 +1,23 @@
 #  GitHubFollowers
 
 ## Main screens
-Search screen                |  Main screen | User info screen |
+Search screen                |  Followers list screen | User info screen |
 :-------------------------:|:-------------------------:|:-------------------------:|
-<img src="GitHubFollowers/Screenshots/searchscreen.png" alt="drawing" width="810" /> | <img src="GitHubFollowers/Screenshots/mainscreen.png" alt="drawing" width="810" /> | <img src="GitHubFollowers/Screenshots/userinfoscreen.png" alt="drawing" width="810" />
+<img src="Screenshots/searchscreen.png" alt="drawing" width="810" /> | <img src="Screenshots/mainscreen.png" alt="drawing" width="760" /> | <img src="Screenshots/userinfoscreen.png" alt="drawing" width="810" />
 
 ## Favorites 
 Favorites                |  Empty favorites | Add to favorites
 :-------------------------:|:-------------------------:|:-------------------------:|
-![](GitHubFollowers/Screenshots/favorites.png)  |  ![](GitHubFollowers/Screenshots/emptyfavorites.png) |  ![](GitHubFollowers/Screenshots/addfavorites.png) 
+![](Screenshots/favorites.png)  |  ![](Screenshots/emptyfavorites.png) |  ![](Screenshots/addfavorites.png) 
 
 ## Errors and empty states
 
-User not found                |  User not found | Empty favorites
+User does not exist                |  User not found | Empty favorites
 :-------------------------:|:-------------------------:|:-------------------------:|
-<img src="GitHubFollowers/Screenshots/userdoesnotexist.png" alt="drawing" width="810" />  |  <img src="GitHubFollowers/Screenshots/usernotfound.png" alt="drawing" width="810" /> | <img src="GitHubFollowers/Screenshots/emptyfavorites.png" alt="drawing" width="770" />
+<img src="Screenshots/userdoesnotexist.png" alt="drawing" width="810" />  |  <img src="Screenshots/usernotfound.png" alt="drawing" width="810" /> | <img src="Screenshots/emptyfavorites.png" alt="drawing" width="770" />
 
 ## User flow
-![](GitHubFollowers/Screenshots/userflowgif.gif) 
+![](Screenshots/userflowgif.gif) 
 
 ## Features
 * 100% programmatic UI
