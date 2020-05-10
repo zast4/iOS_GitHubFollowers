@@ -129,6 +129,7 @@
 				A5DD66BB2BB1FA1F00029683 /* CustomViews */,
 				A5DD66BA2BB1F9D300029683 /* Screens */,
 				A5DD66BD2BB1FAD300029683 /* Support */,
+				A5B361892BE3DEDF0004E24A /* Screenshots */,
 				A52CEE602BAB36D100EB644A /* Info.plist */,
 			);
 			path = GitHubFollowers;
@@ -141,6 +142,13 @@
 				A55A71852BBB05FA0024C96D /* FollowerView.swift */,
 			);
 			path = FollowerCell;
+			sourceTree = "<group>";
+		};
+		A5B361892BE3DEDF0004E24A /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Screenshots;
 			sourceTree = "<group>";
 		};
 		A5C1454B2BB4231800EB632E /* Model */ = {
