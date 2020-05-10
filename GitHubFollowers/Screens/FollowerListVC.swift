@@ -77,22 +77,22 @@ class FollowerListVC: GFDataLoadingVC {
         showLoadingView()
         isLoadingMoreFollowers = true
 
-         Task {
-             do {
-                 let followers = try await NetworkManager.shared.getFollowers(for: username, page: page)
-                 updateUI(with: followers)
-                 dismissLoadingView()
-                 isLoadingMoreFollowers = false
-             } catch {
-                 if let gfError = error as? GFError {
-                     presentGFAlert(title: "Bad Stuff Happend", message: gfError.rawValue, buttonTitle: "Ok")
-                 } else {
-                     presentDefaultError()
-                 }
-                 isLoadingMoreFollowers = false
-                 dismissLoadingView()
-             }
-         }
+        Task {
+            do {
+                let followers = try await NetworkManager.shared.getFollowers(for: username, page: page)
+                updateUI(with: followers)
+                dismissLoadingView()
+                isLoadingMoreFollowers = false
+            } catch {
+                if let gfError = error as? GFError {
+                    presentGFAlert(title: "Bad Stuff Happend", message: gfError.rawValue, buttonTitle: "Ok")
+                } else {
+                    presentDefaultError()
+                }
+                isLoadingMoreFollowers = false
+                dismissLoadingView()
+            }
+        }
 
         /*
          Task {
@@ -108,21 +108,21 @@ class FollowerListVC: GFDataLoadingVC {
          */
 
         /*
-        NetworkManager.shared.getFollowers(for: username, page: page) { [weak self] result in
-            guard let self = self else { return }
-            dismissLoadingView()
+         NetworkManager.shared.getFollowers(for: username, page: page) { [weak self] result in
+             guard let self = self else { return }
+             dismissLoadingView()
 
-            switch result {
-            case let .success(followers):
-                updateUI(with: followers)
+             switch result {
+             case let .success(followers):
+                 updateUI(with: followers)
 
-            case let .failure(error):
-                presentGFAlertOnMainThread(title: "Bad Stuff Happend", message: error.rawValue, buttonTitle: "Ok")
-            }
+             case let .failure(error):
+                 presentGFAlertOnMainThread(title: "Bad Stuff Happend", message: error.rawValue, buttonTitle: "Ok")
+             }
 
-            isLoadingMoreFollowers = false
-        }
-        */
+             isLoadingMoreFollowers = false
+         }
+         */
     }
 
 
@@ -155,15 +155,17 @@ class FollowerListVC: GFDataLoadingVC {
     func updateData(on followers: [Follower]) {
         var snapshot = NSDiffableDataSourceSnapshot<Section, Follower>()
         snapshot.appendSections([.main])
-        snapshot.appendItems(followers)
-        DispatchQueue.main.async { self.dataSource.apply(snapshot, animatingDifferences: true) }
+        DispatchQueue.main.async {
+            snapshot.appendItems(followers)
+            self.dataSource.apply(snapshot, animatingDifferences: true)
+        }
     }
 
 
     @objc
     func addButtonTapped() {
         showLoadingView()
-        
+
         Task {
             do {
                 let user = try await NetworkManager.shared.getUserInfo(for: username)
@@ -193,7 +195,7 @@ class FollowerListVC: GFDataLoadingVC {
                 }
                 return
             }
-            
+
             DispatchQueue.main.async {
                 self.presentGFAlert(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
             }

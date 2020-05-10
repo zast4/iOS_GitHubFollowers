@@ -60,35 +60,6 @@ class NetworkManager {
     }
 
 
-//    func downloadImage(from urlString: String) async throws -> UIImage {
-//        let cacheKey = NSString(string: urlString)
-//
-//        if let image = cache.object(forKey: cacheKey) {
-//            return image
-//        }
-//
-//        guard let url = URL(string: urlString) else {
-//            completed(nil)
-//            return
-//        }
-//
-//
-//        guard let self = self,
-//              error == nil,
-//              let response = response as? HTTPURLResponse, response.statusCode == 200,
-//              let data = data,
-//              let image = UIImage(data: data) else {
-//            completed(nil)
-//            return
-//        }
-//
-//        cache.setObject(image, forKey: cacheKey)
-//
-//        completed(image)
-//    }
-
-
-
     /*
       func getFollowers(for username: String, page: Int, completed: @escaping (Result<[Follower], GFError>) -> ()) {
           let endpoint = baseURL + "\(username)/followers?per_page=100&page=\(page)"
